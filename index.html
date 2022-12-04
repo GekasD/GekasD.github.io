@@ -1,57 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demetrius Gekas</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <script src="https://kit.fontawesome.com/d19c4462e4.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script type="module" src="./js/repositories.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Demetrius Gekas</h1>
-    </header>
-   
-    <main>
-        <h3>Contact Info</h3>
-        <a href="mailto:demetriusgekas@hotmail.com">demetriusgekas@hotmail.com</a>
-        
-        <h3>GitHub Repositories</h3>
-        <table id="repos">
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>License</th>
-                <th>Language</th>
-            </tr>
-        </table>
-    </main>
-
-    <footer>
-        © 2022 Demetrius Gekas
-
-        <ul>
-            <li>
-                <a target="_blank" href="https://steamcommunity.com/profiles/76561198181833585">
-                    <i class="fa-brands fa-steam-square"></i>
-                </a>
-            </li>
-            
-            <li>
-                <a target="_blank" href="https://twitter.com/GekasD">
-                    <i class="fa-brands fa-twitter-square"></i>
-                </a>
-            </li>
-            
-            <li>
-                <a target="_blank" href="https://github.com/GekasD">
-                    <i class="fa-brands fa-github-square"></i>
-                </a>
-            </li>
-        </ul>
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/constants.js"></script>
+        <script src="js/helpers.js"></script>
+        <script type="module" src="js/loader.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a id="main" class="logo" href="#main"></a></li>
+                    <li><a id="software" href="#software">Software I Use</a></li>
+                    <li><a id="projects" href="#projects">Projects</a></li>
+                    <li><a id="links" href="#links">Links</a></li>
+                    <li><a id="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main id="content"></main>
+    </body>
 </html>

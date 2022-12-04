@@ -1,49 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
-html {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 500;
+:root {
+    --color-bg: #161311;
+    --color-text-main: #ffe9d3;
+    --color-text-high: #FFAC5A;
+    --color-text-low: #685a52;
 }
 
 body {
-    max-width: 1170px;
-    margin-right: auto;
-    margin-left: auto;
+    background-color: var(--color-bg);
+    margin: 0 auto;
+    padding: 1rem;
+    max-width: 80rem;
+    font-size: 120%;
+    font-family: 'Courier New', 'Courier', 'monospace';
+    color: var(--color-text-main);
+    text-underline-offset: 0.3em;
+    line-height: 1.5;
+}
+
+a {
+    color: whitesmoke;
+}
+
+img {
+    border: 2px dotted var(--color-text-high);
+}
+
+.imgcard {
+    text-align: center;
+    display: block;
+}
+
+.imgcard p {
+    color: var(--color-text-low);
 }
 
 header {
-    border-bottom: 1px solid #999;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+nav {
+    display: flex;
+}
+
+nav .logo {
+    color: var(--color-text-high);
+}
+
+nav ul {    
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 1rem;
 }
 
 table {
     border-collapse: collapse;
-    width: 100%;
 }
 
-td, th {
-    border: 1px solid #999;
+th, td {
+    text-align: left;
     padding: 0.5rem;
-}
-
-a {
-    text-decoration: none;
-    color: cornflowerblue;
-}
-
-footer {
-    margin-top: 10px;
-    padding-top: 15px;
-    display: inline;
-}
-
-ul {
-    float: right;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    display: inline;
-    font-size: larger;
 }
