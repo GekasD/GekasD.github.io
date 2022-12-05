@@ -23,12 +23,12 @@ function getAge(date) {
     return age;
 }
 
-// Function for loading content inside of an HTML element (i will also be doing the fading shit in here)
+// Function for loading an html file inside of an HTML element
 async function loadContent(element, newUrl, oldUrl) {
     // Get the name of the new tab
     const newHashWithoutHash = getHash(newUrl).slice(1);
 
-    // Page title, a fucking mess to capitalize but it works so i don't care
+    // Page title
     document.title = '[' + newHashWithoutHash[0].toUpperCase() + newHashWithoutHash.slice(1) + '] ' + userInfo.realName;
 
     // Navbar brackets
@@ -39,6 +39,7 @@ async function loadContent(element, newUrl, oldUrl) {
         if (oldLink) oldLink.innerHTML = oldLink.innerHTML.slice(5, -6);
     }
 
+    // Load the html page inside the element
     element.innerHTML = await (await fetch(`views/${newHashWithoutHash}.html`)).text();
 
     // Extra code to run for specific tabs
