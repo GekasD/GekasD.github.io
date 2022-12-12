@@ -6,10 +6,10 @@ document.getElementById('contact').href = emailMagnet(userInfo.email);
 const main = document.getElementById('content');
 
 // Initial load of the content
-await loadContent(main, isHash(document.URL) ? document.URL : '#main');
+loadContent(main, isHash(document.URL) ? document.URL : '#main');
 
 // Whenever the hash changes, update the content inside the main element
-window.addEventListener('hashchange', async (event) => {
+window.addEventListener('hashchange', (event) => {
     // If the old url isn't a hash, its probably just the first page load so its the home page
-    await loadContent(main, event.newURL, isHash(event.oldURL) ? event.oldURL : '#main');
+    loadContent(main, event.newURL, isHash(event.oldURL) ? event.oldURL : '#main');
 });
