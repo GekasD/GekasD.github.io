@@ -57,11 +57,26 @@ async function loadContent(element, newUrl, oldUrl) {
 
 // Function that fills the repository table
 async function fillRepositoryTable(githubUsername) {
+    // Get the repositories table
+    const table = document.getElementById('repos');
+
+    // Put some text inside the table to inform the user it's loading
+    table.innerHTML = "Fetching user's GitHub repositories..."
+
     // Make a get request to github to retrieve the user's repositories
     const repos = await (await fetch(`https://api.github.com/users/${githubUsername}/repos`)).json();
 
-    // Get the repositories table
-    const table = document.getElementById('repos');
+    // Remove the "loading" text
+    table.innerHTML = ''
+
+    // Insert 4 main rows
+    const titles = ['Name', 'Description', 'License', 'Language'];
+    const headerRow = table.insertRow();
+    for (const title of titles) {
+        const headerCell = document.createElement('th');
+        headerCell.innerHTML = title;
+        headerRow.appendChild(headerCell);
+    }
 
     // For each repository of the user
     for (const repo of repos) {
