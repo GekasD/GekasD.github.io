@@ -1,7 +1,7 @@
 // Function for checking if a url is a hash
 const isHash = (url) => url.includes('#');
 
-// Function for getting the hashtag name of the current document's url (example: #main, #software)
+// Function for getting the fragment identifier of the current document's url (example: #main, #software)
 const getHash = (url) => /[^/]*$/.exec(url)[0];
 
 // Function for getting a mail magnet link for an email
@@ -44,7 +44,8 @@ async function loadContent(element, newUrl, oldUrl) {
 
     // Extra code to run for specific tabs
     if (newHashWithoutHash === 'projects') {
-        fillRepositoryTable(userInfo.githubUsername);
+        const repoTable = document.getElementById('repos');
+        fillRepositoryTable(repoTable, userInfo.githubUsername);
     } else if (newHashWithoutHash === 'main') {
         document.getElementById('age').innerHTML = getAge(userInfo.birthDate);
         document.getElementById('name').innerHTML = userInfo.realName;
@@ -56,10 +57,7 @@ async function loadContent(element, newUrl, oldUrl) {
 }
 
 // Function that fills the repository table
-async function fillRepositoryTable(githubUsername) {
-    // Get the repositories table
-    const table = document.getElementById('repos');
-
+async function fillRepositoryTable(table, githubUsername) {
     // Put some text inside the table to inform the user it's loading
     table.innerHTML = "Fetching user's GitHub repositories...";
 
